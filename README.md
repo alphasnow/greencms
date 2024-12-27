@@ -18,7 +18,7 @@
 
 ## 使用
 ### 直接使用
-- 在发行版本页面 [releases](/releases)
+- 在发行版本页面
 - 下载 `GreenCMS_windows_x64.zip`
 - 解压并双击`main.exe`启动程序
 
