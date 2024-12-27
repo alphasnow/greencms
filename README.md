@@ -3,17 +3,17 @@
 
 ## 预览
 ### 前台
-电脑端
+电脑端  
 ![首页](./preview/web/web.jpg)
-手机端
+手机端  
 ![首页](./preview/web/mobile.jpg)
-### 后台
-文章列表
+### 后台  
+文章列表  
 ![文章列表](./preview/admin/article.png)
-文章编辑
+文章编辑  
 ![文章编辑](./preview/admin/article_edit.png)
 ### 接口
-接口文档
+接口文档  
 ![接口文档](./preview/api/doc.jpg)
 
 ## 使用
