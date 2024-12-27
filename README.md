@@ -57,6 +57,9 @@
     - radix-ui
 
 ## 参考
-> https://gin-gonic.com/docs/quickstart/
-> https://nextjs.org/docs/getting-started/installation
-> https://github.com/evrone/go-clean-template
+> https://gin-gonic.com/docs/quickstart/  
+> https://nextjs.org/docs/getting-started/installation  
+> https://github.com/evrone/go-clean-template  
+
+## 开源协议
+[BSD 3-Clause License](LICENSE)
