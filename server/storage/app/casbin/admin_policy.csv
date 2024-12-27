@@ -1,0 +1,14 @@
+# 超级管理
+p, admin, admin-user
+
+# 网站管理
+p, manager, web-meta
+p, manager, web-banner
+
+# 文章编辑
+p, editor, article
+p, editor, article-category
+p, editor, article-tag
+
+g, manager, editor
+g, admin, manager

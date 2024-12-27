@@ -1,0 +1,14 @@
+# 超级管理
+p, admin, /api/admin/admin-user/*, *
+
+# 网站管理
+p, manager, /api/admin/web-meta/*, *
+p, manager, /api/admin/web-banner/*, *
+
+# 文章编辑
+p, editor, /api/admin/article/*, *
+p, editor, /api/admin/article-category/*, *
+p, editor, /api/admin/article-tag/*, *
+
+g, manager, editor
+g, admin, manager

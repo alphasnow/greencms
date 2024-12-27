@@ -1,0 +1,4 @@
+app:
+  name: "viper-demo"
+  debug: true
+  url: "http://localhost"

@@ -1,0 +1,12 @@
+[
+  {"name": "股票", "slug": "stock", "color": "#facc15"},
+  {"name": "基金", "slug": "funds", "color": "#581c87"},
+  {"name": "AI", "slug": "ai", "color": "#831843"},
+  {"name": "SQL", "slug": "sql", "color": "#06b6d4"},
+  {"name": "SUV", "slug": "suv", "color": "#2dd4bf"},
+  {"name": "跑车", "slug": "stang", "color": "#0891b2"},
+  {"name": "太空", "slug": "space", "color": "#42b8ea"},
+  {"name": "医疗", "slug": "medical", "color": "#383838"},
+  {"name": "居家", "slug": "home", "color": "#991b1b"},
+  {"name": "跑步", "slug": "run", "color": "#92400e"}
+]

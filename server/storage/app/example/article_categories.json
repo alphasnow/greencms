@@ -1,0 +1,7 @@
+[
+  {"title": "独家", "description": "独家分类文章", "keywords": "独家,分类,文章","sort": 1},
+  {"title": "财经", "description": "财经分类文章", "keywords": "财经,分类,文章","sort": 2},
+  {"title": "科技", "description": "科技分类文章", "keywords": "科技,分类,文章","sort": 3},
+  {"title": "汽车", "description": "汽车分类文章", "keywords": "汽车,分类,文章","sort": 4},
+  {"title": "体育", "description": "体育分类文章", "keywords": "体育,分类,文章","sort": 5}
+]

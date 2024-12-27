@@ -1,0 +1,6 @@
+[
+  {"access": "root","realname": "超级管理员","username": "root","avatar_url": "/upload/example/admin-avatar.jpg"},
+  {"access": "admin","realname": "后台管理","username": "admin","avatar_url": "/upload/example/admin-avatar.jpg"},
+  {"access": "manager","realname": "数据管理","username": "manager","avatar_url": "/upload/example/admin-avatar.jpg"},
+  {"access": "editor","realname": "文章编辑","username": "editor","avatar_url": "/upload/example/admin-avatar.jpg"}
+]

@@ -1,0 +1,8 @@
+[
+  {"meta_group": "default","meta_key": "title","meta_value": "文章管理系统","meta_name": "网站标题"},
+  {"meta_group": "default","meta_key": "description","meta_value": "文章管理网站描述信息","meta_name": "网站描述"},
+  {"meta_group": "default","meta_key": "keywords","meta_value": "文章,管理,系统,开发,程序","meta_name": "网站关键字"},
+  {"meta_group": "default","meta_key": "record_no","meta_value": "沪ICP备0000000000","meta_name": "网站标题"},
+  {"meta_group": "default","meta_key": "logo","meta_value": "http://127.0.0.1:8080/upload/example/web-logo.png","meta_name": "LOGO"},
+  {"meta_group": "default","meta_key": "analytics","meta_value": "console.log('start analytics')","meta_name": "统计代码"}
+]

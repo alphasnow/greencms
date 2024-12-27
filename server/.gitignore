@@ -1,0 +1,5 @@
+website/admin/
+website/web/
+.idea
+.env
+*.exe

@@ -1,0 +1,7 @@
+[
+  {"banner_group": "home","title": "分类焦点图1","description": "时间就像海绵里的水，只要愿挤，总还是有的","redirect_url": "/category/?id=1","image_url": "/upload/example/banner-1.jpg"},
+  {"banner_group": "home","title": "分类焦点图2","description": "其实地上本没有路，走的人多了，也便成了路。","redirect_url": "/category/?id=2","image_url": "/upload/example/banner-2.jpg"},
+  {"banner_group": "home","title": "分类焦点图3","description": "不在沉默中爆发，就在沉默中灭亡。","redirect_url": "/category/?id=3","image_url": "/upload/example/banner-3.jpg"},
+  {"banner_group": "home","title": "分类焦点图4","description": "悲剧将人生的有价值的东西毁灭给人看，喜剧将那无价值的撕破给人看。","redirect_url": "/category/?id=4","image_url": "/upload/example/banner-4.jpg"},
+  {"banner_group": "home","title": "分类焦点图5","description": "巨大的建筑，总是一木一石叠起来的，我们何妨做做这一木一石呢？我时常做些零碎事，就是为此","redirect_url": "/category/?id=5","image_url": "/upload/example/banner-5.jpg"}
+]

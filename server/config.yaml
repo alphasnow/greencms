@@ -1,0 +1,78 @@
+app:
+  name: "Server"
+  version: "1.0.0"
+  env: "prod"
+  debug: false
+  secret: 61b1e9551d047651038aca1cdb2ee795
+
+server:
+  api:
+    status: true
+    addr: "127.0.0.1:8080"
+    url: "http://127.0.0.1:8080"
+    path: "./storage/upload"
+    open: true
+    docs: true
+  admin:
+    status: true
+    addr: "127.0.0.1:8000"
+    url: "http://127.0.0.1:8000"
+    path: "./website/admin"
+    open: true
+  web:
+    status: true
+    addr: "127.0.0.1:80"
+    url: "http://127.0.0.1"
+    path: "./website/web"
+    open: true
+
+database:
+  default: "sqlite"
+  connections:
+    mysql:
+      addr: "127.0.0.1:3306"
+      db: "server"
+      username: "root"
+      password: "root"
+      options: "charset=utf8mb4&parseTime=True&loc=Local"
+    sqlite:
+      filename: "./storage/data/database.db"
+
+cache:
+  default: "memory"
+  stores:
+    redis:
+      addr: "127.0.0.1:6379"
+      db: 0
+      password: ""
+    memory:
+      num_counters: 1000
+      max_cost: 100
+      buffer_items: 64
+
+
+logger:
+  app:
+    level: debug
+    filename: "./storage/logs/app.log"
+    encoding: console #console
+    max_age: 7
+    max_backups: 21
+    max_size: 20 # 单位是:M
+    compress: false # 格式是:***-2023-11-06T03-20-36.018.log.gz
+  server:
+    level: debug
+    filename: "./storage/logs/server.log"
+    encoding: console
+    max_age: 7
+    max_backups: 7
+    max_size: 20
+    compress: false
+
+auth:
+  users:
+    secret: 9bd42681b14874661f46611c7afeb6e3
+    expire: 2592000 # 30天过期
+  admin_users:
+    secret: a220474b610192df1d9272ce09a0580f
+    expire: 2592000 # 30天过期

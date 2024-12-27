@@ -1,0 +1,343 @@
+basePath: /
+definitions:
+  accessor.StaticUrl:
+    properties:
+      filePath:
+        type: string
+      fileUrl:
+        type: string
+    type: object
+  entity.Article:
+    properties:
+      admin_id:
+        description: 管理员id
+        type: integer
+      article_category:
+        $ref: '#/definitions/entity.ArticleCategory'
+      article_content:
+        $ref: '#/definitions/entity.ArticleContent'
+      article_statistic:
+        $ref: '#/definitions/entity.ArticleStatistic'
+      article_tags:
+        items:
+          $ref: '#/definitions/entity.ArticleTag'
+        type: array
+      category_id:
+        description: 分类id
+        type: integer
+      created_at:
+        description: 添加时间
+        type: string
+      description:
+        description: SEO描述
+        type: string
+      id:
+        description: 文章管理ID
+        type: integer
+      image_url:
+        allOf:
+        - $ref: '#/definitions/accessor.StaticUrl'
+        description: 文章图片
+      keywords:
+        description: SEO关键词
+        type: string
+      origin_author:
+        description: 原文作者
+        type: string
+      origin_url:
+        description: 原文链接
+        type: string
+      sort:
+        description: 排序
+        type: integer
+      title:
+        description: 文章标题
+        type: string
+      updated_at:
+        type: string
+    type: object
+  entity.ArticleCategory:
+    properties:
+      created_at:
+        type: string
+      description:
+        description: SEO描述
+        type: string
+      id:
+        description: 文章分类id
+        type: integer
+      image_url:
+        allOf:
+        - $ref: '#/definitions/accessor.StaticUrl'
+        description: 文章分类图片
+      keywords:
+        description: SEO关键词
+        type: string
+      parent_id:
+        description: 父级ID
+        type: integer
+      sort:
+        description: 排序
+        type: integer
+      title:
+        description: 文章分类标题
+        type: string
+      updated_at:
+        type: string
+    type: object
+  entity.ArticleContent:
+    properties:
+      article_id:
+        description: 文章id
+        type: integer
+      content:
+        description: 文章内容
+        type: string
+      updated_at:
+        type: string
+    type: object
+  entity.ArticleStatistic:
+    properties:
+      article_id:
+        description: 文章id
+        type: integer
+      created_at:
+        type: string
+      favourites:
+        type: integer
+      updated_at:
+        type: string
+      views:
+        type: integer
+    type: object
+  entity.ArticleTag:
+    properties:
+      color:
+        type: string
+      created_at:
+        type: string
+      id:
+        type: integer
+      name:
+        type: string
+      slug:
+        type: string
+      updated_at:
+        type: string
+    type: object
+  entity.WebBanner:
+    properties:
+      banner_group:
+        type: string
+      created_at:
+        type: string
+      description:
+        type: string
+      id:
+        type: integer
+      image_url:
+        $ref: '#/definitions/accessor.StaticUrl'
+      redirect_url:
+        type: string
+      remark:
+        type: string
+      sort:
+        type: integer
+      title:
+        type: string
+      updated_at:
+        type: string
+    type: object
+  schema.ArticleListResp:
+    properties:
+      articles:
+        description: ErrorResp    `json:",inline"`
+        items:
+          $ref: '#/definitions/entity.Article'
+        type: array
+      more_articles:
+        description: 是否有更多文章
+        type: boolean
+    type: object
+  schema.ErrorResp:
+    properties:
+      err_code:
+        type: integer
+      err_msg:
+        type: string
+    type: object
+  schema.HomeDataResp:
+    properties:
+      articles:
+        items:
+          $ref: '#/definitions/entity.Article'
+        type: array
+      banners:
+        description: ErrorResp    `json:",inline"`
+        items:
+          $ref: '#/definitions/entity.WebBanner'
+        type: array
+      hot_articles:
+        items:
+          $ref: '#/definitions/entity.Article'
+        type: array
+      more_articles:
+        type: boolean
+      tags:
+        items:
+          $ref: '#/definitions/entity.ArticleTag'
+        type: array
+    type: object
+  schema.StateDataResp:
+    properties:
+      categories:
+        items:
+          $ref: '#/definitions/entity.ArticleCategory'
+        type: array
+      metas:
+        additionalProperties:
+          type: string
+        description: ErrorResp  `json:",inline"`
+        type: object
+    type: object
+info:
+  contact:
+    email: wind91@foxmail.com
+    name: AlphaSnow
+  description: 遵循Restful API接口规范
+  title: API接口文档
+  version: 1.0.0
+paths:
+  /api/web/article:
+    get:
+      description: 按 分页或分类或标签或关键词 获取文章列表数据
+      parameters:
+      - description: 分类ID
+        in: query
+        name: category_id
+        type: integer
+      - description: 关键词
+        in: query
+        name: keywords
+        type: string
+      - default: 1
+        description: 分页编号
+        in: query
+        name: page
+        type: integer
+      - default: 5
+        description: 分页数量
+        in: query
+        name: size
+        type: integer
+      - description: 标签ID
+        in: query
+        name: tag_id
+        type: integer
+      responses:
+        "200":
+          description: ok
+          schema:
+            $ref: '#/definitions/schema.ArticleListResp'
+      summary: 文章列表
+      tags:
+      - Web
+  /api/web/article/{id}:
+    get:
+      description: 根据文章序号获取文章详细数据
+      parameters:
+      - description: 文章ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      responses:
+        "200":
+          description: ok
+          schema:
+            $ref: '#/definitions/entity.Article'
+      summary: 查看文章
+      tags:
+      - Web
+  /api/web/category/{id}:
+    get:
+      description: 根据分类序号获取文章分类的详细数据
+      parameters:
+      - description: 分类ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      responses:
+        "200":
+          description: ok
+          schema:
+            $ref: '#/definitions/entity.ArticleCategory'
+      summary: 查看分类
+      tags:
+      - Web
+  /api/web/home:
+    get:
+      description: 一次性获取首页所需所有数据
+      responses:
+        "200":
+          description: ok
+          schema:
+            $ref: '#/definitions/schema.HomeDataResp'
+      summary: 首页数据
+      tags:
+      - Web
+  /api/web/state:
+    get:
+      description: 获取初始数据,如标题/统计/LOGO等
+      responses:
+        "200":
+          description: ok
+          schema:
+            $ref: '#/definitions/schema.StateDataResp'
+      summary: 全局初始数据
+      tags:
+      - Web
+  /api/web/statistic/{id}/{type}:
+    put:
+      description: 更新文章统计数据,如查看量
+      parameters:
+      - description: 文章ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: 统计类型:views,favourites
+        in: path
+        name: type
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ok
+          schema:
+            $ref: '#/definitions/schema.ErrorResp'
+      summary: 文章统计
+      tags:
+      - Web
+  /api/web/tag/{id}:
+    get:
+      description: 根据标签序号获取标签详细数据
+      parameters:
+      - description: 标签ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      responses:
+        "200":
+          description: ok
+          schema:
+            $ref: '#/definitions/entity.ArticleTag'
+      summary: 查看标签
+      tags:
+      - Web
+swagger: "2.0"
+tags:
+- description: 前端数据服务接口
+  name: Web
