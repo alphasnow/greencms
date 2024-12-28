@@ -1,31 +1,17 @@
 # 绿色内容管理系统
 基于Golang 与 React 搭建的无依赖快速启动的内容管理系统.
 
-## 预览
-### 前台
-电脑端  
-![首页](./preview/web/web.jpg)
-手机端  
-![首页](./preview/web/mobile.jpg)
-### 后台  
-文章列表  
-![文章列表](./preview/admin/article.png)
-文章编辑  
-![文章编辑](./preview/admin/article_edit.png)
-### 接口
-接口文档  
-![接口文档](./preview/api/doc.jpg)
-
 ## 使用
-### 直接使用
+### 直接启动
 - 在发行版本页面
 - 下载 `GreenCMS_windows_x64.zip`
 - 解压并双击`main.exe`启动程序
 
 ### 二次开发
-- init.bat 初始化项目, 下载前端后端依赖
-- run.bat 开发模式运行项目
-- build.bat 编译项目
+- 开发环境依赖: go 1.22, node 18
+- 下载前端后端依赖: init.bat 
+- 开发模式运行项目: run.bat 
+- 生产模式编译项目: build.bat 
 
 ## 目录
 - admin/ 后台界面源码 
@@ -55,6 +41,21 @@
     - zustand
     - tailwind
     - radix-ui
+
+## 预览
+### 前台
+电脑端  
+![首页](./preview/web/web.jpg)
+手机端  
+![首页](./preview/web/mobile.jpg)
+### 后台  
+文章列表  
+![文章列表](./preview/admin/article.png)
+文章编辑  
+![文章编辑](./preview/admin/article_edit.png)
+### 接口
+接口文档  
+![接口文档](./preview/api/doc.jpg)
 
 ## 参考
 > https://gin-gonic.com/docs/quickstart/  
